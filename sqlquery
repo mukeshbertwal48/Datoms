@@ -1,0 +1,8 @@
+Query to get students opt for physics , maths or both
+ 
+1: Select First_Name,Last_Name, City , (GetDate().Year - GetDate(Age).year) as Age
+    from Students as st JOIN Course as cr 
+    on st.STU_id = cr.STU_id
+    where cr.Course_Name IN (physics , maths)
+    Group By First_Name
+
